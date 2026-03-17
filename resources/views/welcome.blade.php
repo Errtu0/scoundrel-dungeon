@@ -85,7 +85,7 @@
 
     <div class="relative z-20 min-h-screen flex flex-col items-center justify-center text-center space-y-12">
 
-        <h1 class="text-6xl md:text-7xl font-bold tracking-[0.25em] text-red-700 drop-shadow-[0_10px_20px_rgba(0,0,0,1)]">
+        <h1 class="text-5xl md:text-7xl font-bold tracking-[0.25em] text-red-700 drop-shadow-[0_10px_20px_rgba(0,0,0,1)]">
             SCOUNDREL
         </h1>
 

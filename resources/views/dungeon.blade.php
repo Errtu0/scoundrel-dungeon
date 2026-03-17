@@ -85,11 +85,11 @@
 
     <div class="relative z-20 max-w-6xl mx-auto p-4 md:p-8">
 
-        <div class="flex justify-between items-end mb-12 bg-black/40 backdrop-blur-md p-6 rounded-t-lg border-b border-red-900/50">
+        <div class="flex justify-between items-end mb-12 bg-black/40 backdrop-blur-md p-4 sm:p-6 rounded-t-lg border-b border-red-900/50">
             <div class="text-left">
                 <h2 class="text-red-700 uppercase tracking-widest text-xs font-bold mb-1">Vitality</h2>
                 <div class="flex items-baseline gap-1">
-                    <p class="text-5xl font-bold {{ $game->health <= 5 ? 'animate-pulse text-red-500' : 'text-green-600' }}">
+                    <p class="text-3xl sm:text-5xl font-bold {{ $game->health <= 5 ? 'animate-pulse text-red-500' : 'text-green-600' }}">
                         {{ $game->health }}
                     </p>
                     <span class="text-xl text-gray-500">/ 20</span>
@@ -98,7 +98,7 @@
 
             <div class="text-right">
                 <h2 class="text-blue-700 uppercase tracking-widest text-xs font-bold mb-1">Arsenal</h2>
-                <p class="text-5xl font-bold text-blue-500">{{ $game->weapon_val ?? 'None' }}</p>
+                <p class="text-3xl sm:text-5xl font-bold text-blue-500">{{ $game->weapon_val ?? 'None' }}</p>
                 @if($game->last_slain_val)
                     <p class="text-[10px] text-blue-400/60 uppercase mt-1 italic">Slay < {{ $game->last_slain_val }}</p>
                 @endif
@@ -122,7 +122,7 @@
                 <span class="text-lg text-gray-400">{{ count($game->deck) }}</span>
             </div>
 
-            <div class="flex-1 grid grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="flex-1 grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
                 @foreach($game->current_room as $index => $card)
                     @php
                         $isRed = in_array($card['suit'], ['hearts', 'diamonds']);
@@ -142,13 +142,13 @@
 
                         <form action="{{ route('game.play', [$game->id, $index]) }}" method="POST">
                             @csrf
-                            <button type="submit" class="w-full aspect-[2/3] bg-[#fdfaf5] rounded-md shadow-[0_10px_30px_rgba(0,0,0,0.5)] flex flex-col items-center justify-between p-4 border-2 border-gray-300 group relative overflow-hidden">
+                            <button type="submit" class="w-full aspect-[2/3] bg-[#fdfaf5] rounded-md shadow-[0_10px_30px_rgba(0,0,0,0.5)] flex flex-col items-center justify-between p-2 sm:p-4 border-2 border-gray-300 group relative overflow-hidden">
                                 <div class="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/paper-fibers.png')]"></div>
-                                <div class="w-full text-left font-bold text-2xl {{ $isRed ? 'text-red-600' : 'text-slate-900' }}">{{ $val }}</div>
-                                <div class="text-6xl {{ $isRed ? 'text-red-600' : 'text-slate-900' }} drop-shadow-sm">
+                                <div class="w-full text-left font-bold text-lg sm:text-2xl {{ $isRed ? 'text-red-600' : 'text-slate-900' }}">{{ $val }}</div>
+                                <div class="text-4xl sm:text-6xl {{ $isRed ? 'text-red-600' : 'text-slate-900' }} drop-shadow-sm">
                                     @if($card['suit'] == 'hearts') ♥ @elseif($card['suit'] == 'diamonds') ♦ @elseif($card['suit'] == 'spades') ♠ @else ♣ @endif
                                 </div>
-                                <div class="w-full text-right font-bold text-2xl rotate-180 {{ $isRed ? 'text-red-600' : 'text-slate-900' }}">{{ $val }}</div>
+                                <div class="w-full text-right font-bold text-lg sm:text-2xl rotate-180 {{ $isRed ? 'text-red-600' : 'text-slate-900' }}">{{ $val }}</div>
                             </button>
                         </form>
                     </div>
@@ -176,14 +176,14 @@
             </div>
         </div>
 
-        <div class="max-w-2xl mx-auto bg-[#131110] border-l-4 border-red-900 p-6 rounded-r-lg shadow-2xl relative overflow-hidden">
+        <div class="max-w-2xl mx-auto bg-[#131110] border-l-4 border-red-900 p-4 sm:p-6 rounded-r-lg shadow-2xl relative overflow-hidden">
             <i class="ra ra-scroll absolute -right-6 -bottom-6 text-white/5 text-9xl rotate-12"></i>
             <div class="flex items-center gap-3 mb-4 border-b border-white/5 pb-2">
                 <i class="ra ra-quill-ink text-red-800 text-xl"></i>
                 <span class="text-xs uppercase tracking-[0.3em] text-gray-500 font-bold">Chronicle of the Void</span>
             </div>
 
-            <div class="h-32 overflow-y-auto font-mono text-xs space-y-3 log-scroll relative z-10 pr-2">
+            <div class="h-20 sm:h-28 overflow-y-auto font-mono text-xs space-y-3 log-scroll relative z-10 pr-2">
                 @if(session('combat_history'))
                     @foreach(session('combat_history') as $log)
                         @php
