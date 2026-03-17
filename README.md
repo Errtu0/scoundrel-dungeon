@@ -1,59 +1,33 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🃏 Scoundrel: The Dungeon Depth
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A dark-fantasy, solo dungeon crawler built with **Laravel**, **Tailwind CSS**, and **Alpine.js**. Inspired by the roguelike card game *Scoundrel*.
 
-## About Laravel
+## 🕯️ The Premise
+You are a rogue trapped in a 52-card dungeon. Your goal is to clear the entire deck without your health reaching zero.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+### ⚔️ The Rules of the Void
+The dungeon consists of a deck of standard playing cards, where suits determine your fate:
+* **Spades & Clubs (Monsters):** Enemies you must fight. If you have a weapon, you can mitigate damage, but only if the monster is weaker than your previous kill!
+* **Diamonds (Weapons):** Equipping a diamond card gives you an attack value. Using a weapon against a monster might break it if you aren't careful.
+* **Hearts (Potions):** Heals your vitality. Careful—you can only drink one potion per room.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 🕹️ Features
+* **Dynamic Combat Log:** A scrolling "Chronicle of the Void" that tracks every move, hit, and heal.
+* **Atmospheric UI:** Built with a medieval aesthetic, featuring ember animations and blood-vignette health warnings.
+* **Tactical Fleeing:** Once per room, you can scramble back into the darkness to reshuffle the current encounter.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## 🛠️ Tech Stack
+* **Backend:** Laravel 11
+* **Frontend:** Tailwind CSS, Alpine.js
+* **Icons:** RPG-Awesome
+* **Deployment:** Laravel Cloud
 
-## Learning Laravel
+## 🚀 Local Installation
+1. Clone the repo: `git clone https://github.com/YOUR_USERNAME/scoundrel-dungeon.git`
+2. Install dependencies: `composer install`
+3. Set up environment: `cp .env.example .env && php artisan key:generate`
+4. Run migrations: `php artisan migrate`
+5. Start the engine: `php artisan serve`
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+---
+*Developed as a dark-fantasy web experience.*
