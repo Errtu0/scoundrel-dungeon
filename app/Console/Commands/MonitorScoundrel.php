@@ -22,7 +22,7 @@ class MonitorScoundrel extends Command
             $totalGames = GameSession::count() ?? 0;
 
             // Check for 'active' - verify if your DB uses 'active' or 'in_progress'
-            $activeGames = GameSession::where('status', 'active')->count() ?? 0;
+            $activeGames = GameSession::count();
 
             // 2. Check Database Size (Improved for Cloud Environments)
             try {
