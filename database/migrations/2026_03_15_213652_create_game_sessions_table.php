@@ -20,6 +20,7 @@ return new class extends Migration
             $table->integer('last_slain_val')->nullable(); // For weapon "durability" rules
             $table->boolean('can_flee')->default(true);
             $table->timestamps();
+            $table->string('status')->default('active');
 
         });
     }
